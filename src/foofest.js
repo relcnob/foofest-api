@@ -1,5 +1,5 @@
 //====================
-const version = "0.0.1";
+const version = "0.0.2";
 //====================
 
 const { Schedule } = require("./Schedule.js");
@@ -7,6 +7,7 @@ const { Festival } = require("./Festival.js");
 const { EventLog } = require("./EventLog");
 const { Booking } = require("./Booking");
 const Bands = require("./Bands.js");
+const Genres = require("./Genres.js");
 
 function createFest(name) {
   const fest = new Festival(name);
@@ -15,6 +16,7 @@ function createFest(name) {
   const schedule = new Schedule(fest);
   fest.schedule = schedule.slots;
   fest.bands = Bands;
+  fest.genres = Genres;
   const eventLog = new EventLog();
   fest.eventLog = eventLog;
   fest.booking = new Booking(fest);

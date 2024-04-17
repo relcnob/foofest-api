@@ -19,6 +19,9 @@ const { initialSettings } = require("./src/static/settings");
 app.get("/bands", function (req, res) {
   res.json(FooFest.bands);
 });
+app.get("/genres", (req, res) => {
+  res.json(FooFest.genres);
+});
 app.get("/schedule", function (req, res) {
   res.json(FooFest.schedule);
 });

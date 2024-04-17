@@ -4,7 +4,12 @@ const Bands = require("./static/bands.json");
 //const { initialSettings } = require("./static/settings");
 
 //const numBands = 6 * 7 * 3;
-const copy = [...Bands];
+const copy = [];
+for (let i = 0; i < Bands.length; i++) {
+  const slug = Bands[i].name.trim().toLowerCase().split(" ").join("-").replace("/", "-").replace("'", "").replace("_", "").replace(",", "").replace("--", "-").replace("--", "-");
+  copy.push({ ...Bands[i], slug });
+}
+
 /* let start = Bands.length;
 const imageTypes = [
   "abstract",
